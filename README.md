@@ -12,6 +12,20 @@ Clone this repository:
 git clone https://github.com/temporalio/hello-world-project-template-python
 ```
 
+Switch to the cloned directory:
+
+```bash
+hello-world-project-template-python
+```
+
+Create a virtual environment for your project and install the Temporal SDK:
+
+```bash
+python3 -m venv env
+source env/bin/activate
+python -m pip install temporalio
+```
+
 [Install and run the Temporal Server](https://docs.temporal.io/docs/server/quick-install) using `docker compose`.
 
 ```bash

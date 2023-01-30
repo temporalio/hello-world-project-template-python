@@ -11,7 +11,7 @@ async def main():
 
     # Execute a workflow
     result = await client.execute_workflow(
-        SayHello.run, "Temporal", id="my-workflow-id", task_queue="my-task-queue"
+        SayHello.run, "Temporal", id="hello-workflow", task_queue="hello-task-queue"
     )
 
     print(f"Result: {result}")

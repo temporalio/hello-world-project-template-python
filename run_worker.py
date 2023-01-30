@@ -17,7 +17,7 @@ class SayHello:
     @workflow.run
     async def run(self, name: str) -> str:
         return await workflow.execute_activity(
-            say_hello, name, schedule_to_close_timeout=timedelta(seconds=5)
+            say_hello, name, start_to_close_timeout=timedelta(seconds=5)
         )
 
 
@@ -25,7 +25,7 @@ async def main():
     client = await Client.connect("localhost:7233", namespace="default")
     # Run the worker
     worker = Worker(
-        client, task_queue="my-task-queue", workflows=[SayHello], activities=[say_hello]
+        client, task_queue="hello-task-queue", workflows=[SayHello], activities=[say_hello]
     )
     await worker.run()
 

@@ -13,7 +13,7 @@ from temporalio.testing import WorkflowEnvironment
 @pytest.mark.asyncio
 async def test_execute_workflow():
     task_queue_name = str(uuid.uuid4())
-    async with await WorkflowEnvironment.start_local() as env:
+    async with await WorkflowEnvironment.start_time_skipping() as env:
 
         async with Worker(
             env.client,
@@ -37,7 +37,7 @@ async def say_hello_mocked(name: str) -> str:
 @pytest.mark.asyncio
 async def test_mock_activity():
     task_queue_name = str(uuid.uuid4())
-    async with await WorkflowEnvironment.start_local() as env:
+    async with await WorkflowEnvironment.start_time_skipping() as env:
         async with Worker(
             env.client,
             task_queue=task_queue_name,

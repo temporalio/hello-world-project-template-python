@@ -1,25 +1,12 @@
 # @@@SNIPSTART python-project-template-run-worker
 import asyncio
-from datetime import datetime, timedelta
 
 from temporalio import activity, workflow
 from temporalio.client import Client
 from temporalio.worker import Worker
 
-
-@activity.defn
-async def say_hello(name: str) -> str:
-    return f"Hello, {name}!"
-
-
-@workflow.defn
-class SayHello:
-    @workflow.run
-    async def run(self, name: str) -> str:
-        return await workflow.execute_activity(
-            say_hello, name, start_to_close_timeout=timedelta(seconds=5)
-        )
-
+from activities import say_hello
+from workflows import SayHello
 
 async def main():
     client = await Client.connect("localhost:7233", namespace="default")

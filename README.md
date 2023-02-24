@@ -23,7 +23,7 @@ Create a virtual environment for your project and install the Temporal SDK:
 ```bash
 python3 -m venv env
 source env/bin/activate
-python -m pip install temporalio
+python -m pip install temporalio pytest pytest-asyncio
 ```
 
 [Install and run the Temporal Server](https://docs.temporal.io/docs/server/quick-install) using `docker compose`.

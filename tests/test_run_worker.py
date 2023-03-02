@@ -3,12 +3,12 @@ import uuid
 
 import pytest
 
-from activities import say_hello
-from run_worker import SayHello
 from temporalio import activity
 from temporalio.worker import Worker
 from temporalio.testing import WorkflowEnvironment
 
+from activities import say_hello
+from workflows import SayHello
 
 @pytest.mark.asyncio
 async def test_execute_workflow():

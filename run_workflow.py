@@ -1,4 +1,4 @@
-# @@@SNIPSTART python-project-template-run-workflow
+# @@@SNIPSTART python-project-template-run-workflow-hello-world
 import asyncio
 
 from run_worker import SayHello

@@ -21,7 +21,7 @@ This test does the following:
    - `workflows`: a list containing the `SayHello` workflow
    - `activities`: a list containing the `say_hello` activity
 3. Within the context of the Worker instance, the test executes the `SayHello` Workflow using the `execute_workflow` method of the Client class, passing in the following parameters:
-   - `SayHello.ru`n: the entry point of the `SayHello` Workflow
+   - `SayHello.run`: the entry point of the `SayHello` Workflow
    - `"World"`: an argument to be passed to the Workflow
    - `id`: a unique ID generated using the `uuid` module
    - `task_queue`: the unique Task Queue name generated in step 1

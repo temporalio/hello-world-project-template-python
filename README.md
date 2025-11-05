@@ -4,9 +4,13 @@ This is the Hello World project which has all the basic files explained in our [
 
 ## Instructions
 
-Ensure you have Python 3.7 or later installed locally, and that you have Docker installed to run the Temporal Cluster.
+To complete this tutorial, you will need Python 3.9 or later. If you 
+have not already installed the `temporal` command-line interface (CLI), 
+[follow these instructions](https://docs.temporal.io/cli#install) to do
+so now.
 
-Clone this repository:
+
+Next, clone this repository:
 
 ```bash
 git clone https://github.com/temporalio/hello-world-project-template-python
@@ -15,7 +19,7 @@ git clone https://github.com/temporalio/hello-world-project-template-python
 Switch to the cloned directory:
 
 ```bash
-hello-world-project-template-python
+cd hello-world-project-template-python
 ```
 
 Create a virtual environment for your project and install the Temporal SDK:
@@ -26,19 +30,26 @@ source env/bin/activate
 python -m pip install temporalio pytest pytest-asyncio
 ```
 
-[Install and run the Temporal Server](https://docs.temporal.io/docs/server/quick-install) using `docker compose`.
+Use the Temporal CLI to start a Temporal Service for local development:
 
 ```bash
-git clone https://github.com/temporalio/docker-compose.git
-cd docker-compose
-docker compose up
+temporal server start-dev
 ```
 
-You can now view Temporal Web at <http://localhost:8080>.
 
-Run the worker and starter included in the project.
+Run the Worker for this project:
 
 ```bash
 python run_worker.py
+```
+
+Open an other terminal window to the same directory, activate the 
+virtual environment in that session, and then start the Workflow:
+
+```bash
+source env/bin/activate
 python run_workflow.py
 ```
+
+You can access the Temporal Web UI at <http://localhost:8233> and use
+it to see the details for this Workflow Execution.

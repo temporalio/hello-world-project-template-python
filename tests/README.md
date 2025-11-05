@@ -90,4 +90,4 @@ This fixture provides a `Client` instance for use in the tests. It creates the i
     - `task_queue`: the unique Task Queue name generated in step 9
 12. Assert that the expected output of the workflow `("Hello, World from mocked activity!")` is returned.
 
-Note: The `test_run_worker.py` file should also include the necessary import statements for the `SayHello` workflow and `say_hello` activity. These should be imported from the `run_worker` module.
+Note: The `test_run_workflow.py` file should also include the necessary import statements for the `SayHello` workflow and `say_hello` activity. These should be imported from the `run_worker` module.
